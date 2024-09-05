@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tool-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+}
+
+.tool-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.tool-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.tool-card .ranking {
+    font-size: 2rem;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.tool-card a {
+    text-decoration: none;
+    color: white;
+    background-color: #f39c12;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.tool-card a:hover {
+    background-color: #e67e22;
+}
+
+.tool-details {
+    margin-top: 50px;
+}
+
+.tool-details h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tool-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tool-details table, .tool-details th, .tool-details td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.tool-details th {
+    background-color: #f39c12;
+    color: white;
+}
+
+.tool-details td a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+.tool-details .stars {
+    color: #f39c12;
+}
+
+.video-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.video-container img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.video-container img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .tool-card {
+        padding: 15px;
+    }
+
+    .tool-card h2 {
+        font-size: 1.25rem;
+    }
+
+    .tool-card p {
+        font-size: 0.9rem;
+    }
+
+    .tool-card a {
+        padding: 8px 16px;
+    }
+}
+
+/* Smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Home button styling */
+.home-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+}
+
+/* Optionally hide the button when near the top of the page */
+.home-button.hidden {
+    display: none;
+}
