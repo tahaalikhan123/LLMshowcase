@@ -14,22 +14,50 @@
     <h1>Top Tools Ranking</h1>
 </header>
 
+<div class="banner">🚧 Coming Soon: User Ratings, Reviews, and More! 🚧</div>
+
+<div class="filter-sort-container">
+    <input type="text" id="searchBar" placeholder="Search for a tool...">
+    <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="Text and Language Models">Text and Language Models</option>
+        <option value="Image and Art Generators">Image and Art Generators</option>
+        <option value="Music and Audio">Music and Audio</option>
+        <option value="Code Generation">Code Generation</option>
+        <option value="Video and Animation">Video and Animation</option>
+        <option value="Specialized Applications">Specialized Applications</option>
+    </select>
+    <select id="sortOptions">
+        <option value="ranking">Sort by Ranking</option>
+        <option value="rating">Sort by Rating</option>
+    </select>
+</div>
+
 <main class="container" id="tools-container">
     <!-- Tool cards will be dynamically generated here -->
 </main>
 
-<div id="tool-details-container">
+<section id="tool-details-container">
     <!-- Tool details will be dynamically generated here -->
+</section>
+
+<!-- Modal for comparison -->
+<div id="comparisonModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Compare Tools</h2>
+        <div id="comparisonContent">
+            <!-- Comparison content will be dynamically generated -->
+        </div>
+    </div>
 </div>
 
-<button id="homeButton" class="home-button">
-    Home
-</button>`
-
+<!-- Footer -->
 <footer>
     <p>&copy; 2024 Top Tools Ranking. All Rights Reserved.</p>
 </footer>
 
+<!-- Scripts -->
 <script src="script.js"></script>
 </body>
 </html>

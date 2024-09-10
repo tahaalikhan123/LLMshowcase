@@ -1,3 +1,10 @@
+// Placeholder for API section
+// Commented out for future integration
+// function fetchDataFromAPI() {
+//     // Fetch tool data from the backend API
+//     // Use AJAX or Fetch API to retrieve data
+// }
+
 // Array to hold all the tool information
 const tools = [
     {
@@ -10,7 +17,7 @@ const tools = [
         link: "https://openai.com/gpt-4",
         rating: 4.5,
         videoThumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg",
-        videoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        videoLink: "https://www.youtube.com/watch?v=uarNiSl_uh4"
     },
     {
         name: "Google Bard",
@@ -24,8 +31,11 @@ const tools = [
         videoThumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg",
         videoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
-    // Add more tools as needed following the same structure
+    // Add more tools as needed
 ];
+
+// Tool comparison array
+let comparisonList = [];
 
 // Function to generate star ratings
 function generateStars(rating) {
@@ -42,6 +52,7 @@ function generateStars(rating) {
 // Function to generate tool cards
 function generateToolCards() {
     const container = document.getElementById("tools-container");
+    container.innerHTML = ''; // Clear existing tools
     tools.forEach((tool, index) => {
         container.innerHTML += `
             <div class="tool-card">
@@ -49,57 +60,53 @@ function generateToolCards() {
                 <h2>${tool.name}</h2>
                 <p>${tool.description}</p>
                 <a href="#tool-${index}">Learn More</a>
+                <button onclick="addToComparison(${index})">Compare</button>
+                <button onclick="toggleFavorite(${index})">Favorite</button>
             </div>
         `;
     });
 }
 
-// Function to generate tool details
-function generateToolDetails() {
-    const detailsContainer = document.getElementById("tool-details-container");
-    tools.forEach((tool, index) => {
-        detailsContainer.innerHTML += `
-            <section id="tool-${index}" class="tool-details">
-                <h2>${tool.name}</h2>
-                <table>
-                    <tr>
-                        <th>Helpfulness</th>
-                        <th>Honesty</th>
-                        <th>Harmlessness</th>
-                        <th>Link</th>
-                        <th>Rating</th>
-                    </tr>
-                    <tr>
-                        <td>${tool.helpfulness}/10</td>
-                        <td>${tool.honesty}/10</td>
-                        <td>${tool.harmlessness}/10</td>
-                        <td><a href="${tool.link}" target="_blank">Visit</a></td>
-                        <td class="stars">${generateStars(tool.rating)}</td>
-                    </tr>
-                </table>
-                <div class="video-container">
-                    <img src="${tool.videoThumbnail}" alt="${tool.name} Video Thumbnail" onclick="window.open('${tool.videoLink}', '_blank')">
-                </div>
-            </section>
-        `;
-    });
+// Function to add tool to comparison list
+function addToComparison(index) {
+    if (!comparisonList.includes(tools[index])) {
+        comparisonList.push(tools[index]);
+    }
+    openComparisonModal();
 }
 
-// Initialize the page content
-generateToolCards();
-generateToolDetails();
+// Function to toggle favorite
+function toggleFavorite(index) {
+    const tool = tools[index];
+    tool.isFavorite = !tool.isFavorite;
+    alert(tool.isFavorite ? `${tool.name} added to favorites!` : `${tool.name} removed from favorites.`);
+}
 
-// Function to scroll to the top when the home button is clicked
-document.getElementById("homeButton").addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+// Function to open comparison modal
+function openComparisonModal() {
+    const modal = document.getElementById("comparisonModal");
+    const comparisonContent = document.getElementById("comparisonContent");
+    comparisonContent.innerHTML = comparisonList.map(tool => `
+        <div>
+            <h3>${tool.name}</h3>
+            <p>${tool.description}</p>
+        </div>
+    `).join('');
+    modal.style.display = "block";
+}
 
-// Optionally hide the home button when near the top of the page
-window.addEventListener("scroll", function() {
-    const homeButton = document.getElementById("homeButton");
-    if (window.scrollY > 300) {
-        homeButton.classList.remove("hidden");
-    } else {
-        homeButton.classList.add("hidden");
+// Close modal on clicking the close button
+document.querySelector(".close").onclick = function() {
+    document.getElementById("comparisonModal").style.display = "none";
+};
+
+// Close modal when clicking outside of the modal
+window.onclick = function(event) {
+    const modal = document.getElementById("comparisonModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
     }
-});
+};
+
+// Initial render of tool cards
+generateToolCards();
