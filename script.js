@@ -17,7 +17,7 @@ const tools = [
         link: "https://openai.com/gpt-4",
         rating: 4.5,
         videoThumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg",
-        videoLink: "https://www.youtube.com/watch?v=uarNiSl_uh4"
+        videoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "Google Bard",
