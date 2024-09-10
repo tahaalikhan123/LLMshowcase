@@ -13,7 +13,7 @@ A responsive single-page application (SPA) that ranks various tools across diffe
 
 ## Live Demo
 
-Check out the live demo [https://tahaalikhan123.github.io/tools/](#).
+Check out the live demo [https://tahaalikhan123.github.io/tools/]
 
 ## Installation
 
