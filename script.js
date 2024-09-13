@@ -48,6 +48,29 @@ function generateStars(rating) {
     }
     return stars;
 }
+function filterAndSortTools() {
+    const category = document.getElementById("categoryFilter").value;
+    const sortOption = document.getElementById("sortOptions").value;
+
+    let filteredTools = tools;
+
+    // Filter by category
+    if (category !== 'all') {
+        filteredTools = filteredTools.filter(tool => tool.category === category);
+    }
+
+    // Sort tools by the selected option
+    if (sortOption === 'rating') {
+        filteredTools.sort((a, b) => b.rating - a.rating);
+    } else if (sortOption === 'ranking') {
+        filteredTools.sort((a, b) => tools.indexOf(a) - tools.indexOf(b));
+    }
+
+    generateToolCards(filteredTools);
+}
+
+document.getElementById("categoryFilter").addEventListener('change', filterAndSortTools);
+document.getElementById("sortOptions").addEventListener('change', filterAndSortTools);
 
 // Function to generate tool cards
 function generateToolCards() {
@@ -93,6 +116,75 @@ function openComparisonModal() {
         </div>
     `).join('');
     modal.style.display = "block";
+}
+
+function showToolDetails(index) {
+    const tool = tools[index];
+    const detailsContainer = document.getElementById('tool-details-container');
+    detailsContainer.innerHTML = `
+        <div class="tool-details">
+            <h2>${tool.name}</h2>
+            <p>${tool.description}</p>
+            <table>
+                <tr><th>Helpfulness</th><td>${tool.helpfulness}</td></tr>
+                <tr><th>Honesty</th><td>${tool.honesty}</td></tr>
+                <tr><th>Harmlessness</th><td>${tool.harmlessness}</td></tr>
+            </table>
+            <div class="video-container">
+                <img src="${tool.videoThumbnail}" alt="Video Thumbnail" onclick="window.open('${tool.videoLink}', '_blank')">
+            </div>
+        </div>
+    `;
+}
+
+document.querySelectorAll('.tool-card a').forEach((link, index) => {
+    link.addEventListener('click', () => showToolDetails(index));
+});
+
+function removeFromComparison(index) {
+    comparisonList = comparisonList.filter(tool => tool !== tools[index]);
+    openComparisonModal();
+}
+
+// Modify the comparison content generation to include a remove button
+function openComparisonModal() {
+    const modal = document.getElementById("comparisonModal");
+    const comparisonContent = document.getElementById("comparisonContent");
+    comparisonContent.innerHTML = comparisonList.map((tool, index) => `
+        <div>
+            <h3>${tool.name}</h3>
+            <p>${tool.description}</p>
+            <button onclick="removeFromComparison(${tools.indexOf(tool)})">Remove</button>
+        </div>
+    `).join('');
+    modal.style.display = "block";
+}
+
+function toggleFavorite(index) {
+    const tool = tools[index];
+    tool.isFavorite = !tool.isFavorite;
+    
+    // Update localStorage
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    if (tool.isFavorite) {
+        favorites.push(tool.name);
+        alert(`${tool.name} added to favorites!`);
+    } else {
+        const toolIndex = favorites.indexOf(tool.name);
+        if (toolIndex > -1) favorites.splice(toolIndex, 1);
+        alert(`${tool.name} removed from favorites.`);
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+
+// On page load, check for existing favorites
+window.onload = function() {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    favorites.forEach(favTool => {
+        const tool = tools.find(tool => tool.name === favTool);
+        if (tool) tool.isFavorite = true;
+    });
+    generateToolCards();  // Re-render to reflect favorite status
 }
 
 // Close modal on clicking the close button
