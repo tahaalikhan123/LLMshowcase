@@ -1,0 +1,45 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restructured Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <nav>
+        <div class="logo">Top Tools</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+</header>
+<main class="tools-page">
+    <h1>Explore Tools</h1>
+    <div class="filter-sort-container">
+        <input type="text" id="searchBar" placeholder="Search for a tool...">
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <!-- Other options -->
+        </select>
+        <select id="sortOptions">
+            <option value="ranking">Sort by Ranking</option>
+            <option value="rating">Sort by Rating</option>
+        </select>
+    </div>
+
+    <section class="tools-container" id="tools-container">
+        <!-- Tool Cards will be dynamically inserted here -->
+    </section>
+</main>

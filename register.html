@@ -1,0 +1,48 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restructured Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <nav>
+        <div class="logo">Top Tools</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+</header>
+<main class="register-page">
+    <h1>Create an Account</h1>
+    <form action="register.html" method="POST" class="registration-form">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="profile-picture">Profile Picture (Optional)</label>
+        <input type="file" id="profile-picture" name="profile-picture">
+
+        <label for="contact">Contact Number (Optional)</label>
+        <input type="tel" id="contact" name="contact">
+
+        <label for="location">Location (Optional)</label>
+        <input type="text" id="location" name="location">
+
+        <button type="submit">Register</button>
+    </form>
+</main>

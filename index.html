@@ -3,61 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Tools Ranking</title>
+    <title>Restructured Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
+<!-- Header -->
 <header>
-    <h1>Top Tools Ranking</h1>
+    <nav>
+        <div class="logo">Top Tools</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 </header>
 
-<div class="banner">🚧 Coming Soon: User Ratings, Reviews, and More! 🚧</div>
+<!-- Main Content for Home Page -->
+<main>
+    <!-- Quote of the Day Section -->
+    <section class="quote-container">
+        <h2>Quote of the Day</h2>
+        <p id="quote">"The only way to do great work is to love what you do." - Steve Jobs</p>
+    </section>
 
-<div class="filter-sort-container">
-    <input type="text" id="searchBar" placeholder="Search for a tool...">
-    <select id="categoryFilter">
-        <option value="all">All Categories</option>
-        <option value="Text and Language Models">Text and Language Models</option>
-        <option value="Image and Art Generators">Image and Art Generators</option>
-        <option value="Music and Audio">Music and Audio</option>
-        <option value="Code Generation">Code Generation</option>
-        <option value="Video and Animation">Video and Animation</option>
-        <option value="Specialized Applications">Specialized Applications</option>
-    </select>
-    <select id="sortOptions">
-        <option value="ranking">Sort by Ranking</option>
-        <option value="rating">Sort by Rating</option>
-    </select>
-</div>
+    <!-- About Us Section -->
+    <section class="about-container">
+        <h2>About Us</h2>
+        <p>We are a team motivated by innovation, aiming to provide the best tools and resources for creators, developers, and learners. Our mission is to help others unlock their potential through technology.</p>
+        <p><strong>Vision:</strong> To inspire creativity.</p>
+        <p><strong>Mission:</strong> To make tools easily accessible to everyone.</p>
+    </section>
 
-<main class="container" id="tools-container">
-    <!-- Tool cards will be dynamically generated here -->
-</main>
-
-<section id="tool-details-container">
-    <!-- Tool details will be dynamically generated here -->
-</section>
-
-<!-- Modal for comparison -->
-<div id="comparisonModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Compare Tools</h2>
-        <div id="comparisonContent">
-            <!-- Comparison content will be dynamically generated -->
+    <!-- Testimonials Section -->
+    <section class="testimonials-container">
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+            <p>"This site helped me find the best tools for my projects!" - Jane Doe</p>
         </div>
-    </div>
-</div>
+        <div class="testimonial">
+            <p>"Amazing resource, can't wait for the updates!" - John Smith</p>
+        </div>
+    </section>
+</main>
 
 <!-- Footer -->
 <footer>
     <p>&copy; 2024 Top Tools Ranking. All Rights Reserved.</p>
 </footer>
 
-<!-- Scripts -->
-<script src="script.js"></script>
 </body>
 </html>

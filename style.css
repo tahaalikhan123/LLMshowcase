@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,31 +9,115 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f9;
     color: #333;
+    padding: 0;
     line-height: 1.6;
+}
+
+/* Header and Footer Styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
-header {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
-    margin-bottom: 10px;  /* Reduced margin to avoid conflict */
+.nav-links {
+    list-style: none;
+    display: flex;
 }
 
-.banner {
-    background-color: #e74c3c;
-    color: #fff;
-    font-size: 1rem;
-    padding: 10px;
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+}
+
+.hamburger i {
+    font-size: 28px;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
     text-align: center;
-    margin-bottom: 20px;  /* Push banner below header */
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+/* Home Page Styling */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.quote-container, .about-container, .testimonials-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.quote-container p {
+    font-style: italic;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.about-container h2, .testimonials-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-container p, .testimonials-container p {
+    margin-bottom: 10px;
+}
+
+.testimonial {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 5px solid #f39c12;
+    margin-bottom: 10px;
+}
+
+/* Tools Page Styling */
+.tools-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .filter-sort-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .filter-sort-container select, .filter-sort-container input {
@@ -42,184 +127,193 @@ header {
     border: 1px solid #ddd;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .tool-card {
-    background-color: white;
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+    perspective: 1000px;
+}
+
+.tool-card .tool-front, .tool-card .tool-back {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+}
+
+.tool-card .tool-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tool-card .tool-front h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.tool-card .tool-front img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.tool-card .tool-back {
+    transform: rotateY(180deg);
     text-align: center;
 }
 
-.tool-card:hover {
-    transform: translateY(-5px);
+.tool-card:hover .tool-front {
+    transform: rotateY(180deg);
 }
 
-.tool-card h2 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #333;
+.tool-card:hover .tool-back {
+    transform: rotateY(360deg);
 }
 
-.tool-card p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.tool-card .ranking {
-    font-size: 2rem;
-    color: #f39c12;
-    margin-bottom: 10px;
-}
-
-.tool-card a {
-    text-decoration: none;
-    color: white;
+.tool-back a, .tool-back button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 15px;
     background-color: #f39c12;
-    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
     border-radius: 5px;
-    font-weight: 600;
     transition: background-color 0.3s ease;
 }
 
-.tool-card a:hover {
+.tool-back button:hover, .tool-back a:hover {
     background-color: #e67e22;
 }
 
-.tool-details {
-    margin-top: 50px;
+/* Reviews Page Styling */
+.reviews-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.tool-details h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.tool-details table {
+.ranking-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.tool-details table, .tool-details th, .tool-details td {
+.ranking-table th, .ranking-table td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
 }
 
-.tool-details th {
+.ranking-table th {
     background-color: #f39c12;
     color: white;
 }
 
-.tool-details td a {
-    color: #f39c12;
-    text-decoration: none;
-}
-
-.tool-details .stars {
-    color: #f39c12;
-}
-
-.video-container {
+.top-tools {
     text-align: center;
-    margin-top: 20px;
 }
 
-.video-container img {
-    width: 100%;
-    max-width: 400px;
+.top-tools p {
+    font-size: 1.2rem;
+}
+
+/* Registration and Login Page Styling */
+.register-page, .login-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
     border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    display: block; /* Ensure image is displayed as block-level element */
-    margin: 0 auto; /* Center the thumbnail */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.video-container img:hover {
-    transform: scale(1.05);
+.registration-form, .login-form {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Modal styling */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+.registration-form label, .login-form label {
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.modal-content {
-    background-color: #fff;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 800px;
-    border-radius: 10px;
+.registration-form input, .login-form input, .login-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-footer {
-    text-align: center;
-    padding: 30px 0;
-    background-color: #333;
+.registration-form button, .login-form button {
+    padding: 10px;
+    background-color: #f39c12;
     color: white;
-    margin-top: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.registration-form button:hover, .login-form button:hover {
+    background-color: #e67e22;
+}
+
+/* Contact Us Page Styling */
+.contact-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.live-chat {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    margin: 10px 0;
 }
 
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .filter-sort-container {
         flex-direction: column;
+        align-items: stretch;
     }
 
     .filter-sort-container select, .filter-sort-container input {
         margin-bottom: 10px;
+        width: 100%;
     }
 
-    .tool-card {
-        padding: 15px;
-    }
-
-    .tool-card h2 {
-        font-size: 1.25rem;
-    }
-
-    .tool-card p {
-        font-size: 0.9rem;
-    }
-
-    .tool-card a {
-        padding: 8px 16px;
+    .tools-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
