@@ -31,6 +31,7 @@
 <!-- Main Content for Home Page -->
 <main>
     <!-- Quote of the Day Section -->
+    <div class="parallax" style="background-image: url('pexels-alscre-2847648.jpg');">
     <section class="quote-container">
         <h2>Quote of the Day</h2>
         <p id="quote">"The only way to do great work is to love what you do." - Steve Jobs</p>
@@ -44,17 +45,34 @@
         <p><strong>Mission:</strong> To make tools easily accessible to everyone.</p>
     </section>
 
+    <!-- Parallax Section between About and Testimonials -->
+<div class="parallax" style="background-image: url('pexels-alscre-2847648.jpg');">
+    <!-- Empty div used purely for visual break with parallax effect -->
+</div>
+
     <!-- Testimonials Section -->
-    <section class="testimonials-container">
-        <h2>Testimonials</h2>
-        <div class="testimonial">
-            <p>"This site helped me find the best tools for my projects!" - Jane Doe</p>
+    <section class="testimonial-slider">
+        <div class="testimonial-slide">
+            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Person 1">
+            <p>"This is the first testimonial."</p>
+            <h4>Person 1</h4>
         </div>
-        <div class="testimonial">
-            <p>"Amazing resource, can't wait for the updates!" - John Smith</p>
+        <div class="testimonial-slide">
+            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Person 2">
+            <p>"This is the second testimonial."</p>
+            <h4>Person 2</h4>
         </div>
-    </section>
-</main>
+        <div class="testimonial-slide">
+            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Person 3">
+            <p>"This is the third testimonial."</p>
+            <h4>Person 3</h4>
+        </div>
+    
+        <div class="testimonial-nav">
+            <button class="prev">&lt;</button>
+            <button class="next">&gt;</button>
+        </div>
+    </section>    
 
 <!-- Footer -->
 <footer>
