@@ -7,89 +7,75 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text */
     padding: 0;
     line-height: 1.6;
-    overflow-x: hidden;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
+    overflow-x: hidden; /* Ensure horizontal overflow is hidden */
+    opacity: 1; /* Ensure opacity is fully visible */
 }
 
+/* Fade In Animation */
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Parallax Section */
-.parallax {
-    background-attachment: scroll;
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    margin-bottom: 50px;
-}
-
-/* Header and Footer Styling */
-header {
-    background-color: #333;
-    color: white;
-    padding: 15px 0;
-}
-
-nav {
+/* Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #000000; /* Black sidebar */
+    padding: 20px;
+    top: 0;
+    left: -250px; /* Hidden initially */
+    z-index: 1000;
+    transition: left 0.3s ease;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
+/* Show sidebar when active */
+.sidebar.active {
+    left: 0; /* Slide in when active */
 }
 
-.nav-links li {
-    margin-left: 20px;
+/* Mobile and Desktop Layout */
+@media (min-width: 768px) {
+    /* For desktop, initially hide sidebar and only show when active */
+    .sidebar {
+        position: fixed;
+        left: -250px; /* Hidden initially */
+    }
+
+    .sidebar.active {
+        left: 0; /* Slide in when active */
+    }
+
+    .hamburger {
+        display: none; /* No need for hamburger icon on desktop */
+    }
+
+    /* Ensure content doesn't shift unless sidebar is active */
+    main {
+        margin-left: 0; /* Adjust this as needed */
+        padding: 20px;
+    }
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 5px 10px;
-    transition: background 0.3s;
-}
-
-.nav-links a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
-
-/* Hamburger Menu for Mobile */
-.hamburger {
-    display: none;
-}
-
-.hamburger i {
-    font-size: 28px;
-    color: white;
-}
-
-/* Link logo to home */
-.logo a {
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+@media (max-width: 768px) {
+    main {
+        margin-left: 0; /* Ensure no content shift on mobile */
+        padding: 20px;
+    }
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text */
     text-align: center;
     padding: 20px 0;
     margin-top: 50px;
@@ -105,44 +91,75 @@ main {
 .quote-container, .about-container, .testimonials-container {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #000000; /* Black background */
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF; /* White text */
+    box-shadow: 0 2px 5px rgba(255, 215, 0, 0.3); /* Gold shadow */
 }
 
 .quote-container p {
     font-style: italic;
     text-align: center;
     font-size: 1.5rem;
-    color: #555;
+    color: #FFD700; /* Gold for quote */
 }
 
 .about-container h2, .testimonials-container h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #FFD700; /* Gold for section titles */
 }
 
-.about-container p, .testimonials-container p {
+/* Testimonials Section */
+.testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    height: 300px; /* Consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-slide img {
+    width: 100px; /* Adjusted width for testimonials */
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.testimonial-slide p {
     margin-bottom: 10px;
 }
 
-.testimonial {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-left: 5px solid #f39c12;
-    margin-bottom: 10px;
+.testimonial-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonial-nav button {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #FFD700; /* Gold buttons */
+    cursor: pointer;
 }
 
 /* Tools Page Styling */
 .tools-page h1 {
     text-align: center;
     margin-bottom: 20px;
-}
-
-.filter-sort-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+    color: #FFD700; /* Gold title */
 }
 
 .filter-sort-container select, .filter-sort-container input {
@@ -150,32 +167,31 @@ main {
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ddd;
-}
-
-.tools-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    background-color: #000000; /* Black background */
+    color: #FFD700; /* Gold text */
 }
 
 .tool-card {
-    position: relative;
     width: 250px;
     height: 300px;
     margin: 20px;
-    perspective: 1000px;
+    background-color: #000000; /* Black tool card */
+    border-radius: 10px;
+    color: #FFFFFF; /* White text */
+    box-shadow: 0 2px 5px rgba(255, 215, 0, 0.3); /* Gold shadow */
+    transition: transform 0.6s ease;
+    position: relative; /* Ensure proper positioning for front and back */
 }
 
 .tool-card .tool-front, .tool-card .tool-back {
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #000000;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(255, 215, 0, 0.3);
     position: absolute;
     backface-visibility: hidden;
-    transition: transform 0.6s;
 }
 
 .tool-card .tool-front {
@@ -205,68 +221,33 @@ main {
     transform: rotateY(180deg);
 }
 
-.tool-card .tool-back {
-    transform: rotateY(-180deg);
-}
-
 .tool-card:hover .tool-back {
-    transform: rotateY(0deg);
+    transform: rotateY(0deg); /* Rotate back to original position */
 }
 
 .tool-back a, .tool-back button {
     display: block;
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: #f39c12;
-    color: white;
+    background-color: #FFD700;
+    color: #000000;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .tool-back button:hover, .tool-back a:hover {
-    background-color: #e67e22;
+    background-color: #FFFFFF; /* White on hover */
 }
 
-/* Reviews Page Styling */
-.reviews-page h1 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.ranking-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-}
-
-.ranking-table th, .ranking-table td {
-    border: 1px solid #ddd;
-    padding: 16px; /* Increase padding for better readability */
-    text-align: center;
-}
-
-.ranking-table th {
-    background-color: #f39c12;
-    color: white;
-}
-
-.top-tools {
-    text-align: center;
-}
-
-.top-tools p {
-    font-size: 1.2rem;
-}
-
-/* Form Styles for Contact, Login, and Registration */
+/* Forms for Contact, Login, and Registration */
 form {
     max-width: 600px;
     margin: 0 auto;
     padding: 40px;
-    background-color: white;
+    background-color: #000000; /* Black form background */
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(255, 215, 0, 0.3); /* Gold shadow */
 }
 
 form input, form textarea, form button {
@@ -275,12 +256,14 @@ form input, form textarea, form button {
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #FFD700; /* Gold borders */
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text */
 }
 
 form button {
-    background-color: #f39c12;
-    color: white;
+    background-color: #FFD700; /* Gold button */
+    color: #000000; /* Black text */
     border: none;
     cursor: pointer;
     font-size: 16px;
@@ -288,102 +271,14 @@ form button {
 }
 
 form button:hover {
-    background-color: #e67e22;
-}
-
-.live-chat {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.contact-details p {
-    font-size: 1.1rem;
-    margin: 10px 0;
-}
-
-/* Testimonials Slider */
-.testimonial-slider {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-}
-
-.testimonial-slide {
-    min-width: 100%;
-    height: 300px; /* Add a consistent height */
-    transition: transform 0.5s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.5s ease-in-out;
-}
-
-.testimonial-slide img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.testimonial-slide p {
-    margin-bottom: 10px;
-}
-
-.testimonial-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.testimonial-nav button {
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-    color: #333;
-    cursor: pointer;
-}
-
-/* Animated Quote of the Day */
-@keyframes slideIn {
-    0% { transform: translateX(-100%); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-}
-
-.quote-container p {
-    font-style: italic;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #555;
-    animation: slideIn 2s;
-}
-
-.quote-container p.animate {
-    animation: slideIn 2s forwards;
+    background-color: #FFFFFF; /* White on hover */
+    color: #000000; /* Black text */
 }
 
 @media (max-width: 768px) {
-    .nav-links.nav-open {
-        display: block;
-    }
-    
-
-    .hamburger {
-        display: block;
-    }
-
-    .filter-sort-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .filter-sort-container select, .filter-sort-container input {
-        margin-bottom: 10px;
-        width: 100%;
+    main {
+        margin-left: 0;
+        padding: 20px;
     }
 
     .tools-container {

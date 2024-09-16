@@ -7,31 +7,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <!-- Add Font Awesome if using its icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-<!-- Header -->
-<header>
-    <nav>
-        <div class="logo">Top Tools</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="tools.html">Tools</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
-</header>
+<!-- Hamburger Menu for Mobile -->
+<div class="hamburger" aria-label="Toggle sidebar">
+    <i class="fas fa-bars"></i>
+</div>
 
-<!-- Main Content for Home Page -->
+<!-- Sidebar Navigation -->
+<div class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="tools.html">Tools</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="register.html">Register</a>
+    <a href="login.html">Login</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<!-- Main Content -->
 <main>
     <!-- Quote of the Day Section -->
-    <div class="parallax" style="background-image: url('pexels-alscre-2847648.jpg');">
     <section class="quote-container">
         <h2>Quote of the Day</h2>
         <p id="quote">"The only way to do great work is to love what you do." - Steve Jobs</p>
@@ -45,39 +43,35 @@
         <p><strong>Mission:</strong> To make tools easily accessible to everyone.</p>
     </section>
 
-    <!-- Parallax Section between About and Testimonials -->
-<div class="parallax" style="background-image: url('pexels-alscre-2847648.jpg');">
-    <!-- Empty div used purely for visual break with parallax effect -->
-</div>
-
     <!-- Testimonials Section -->
     <section class="testimonial-slider">
         <div class="testimonial-slide">
-            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Person 1">
+            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Testimonial from Person 1">
             <p>"This is the first testimonial."</p>
             <h4>Person 1</h4>
         </div>
         <div class="testimonial-slide">
-            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Person 2">
+            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Testimonial from Person 2">
             <p>"This is the second testimonial."</p>
             <h4>Person 2</h4>
         </div>
         <div class="testimonial-slide">
-            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Person 3">
+            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Testimonial from Person 3">
             <p>"This is the third testimonial."</p>
             <h4>Person 3</h4>
         </div>
-    
+
         <div class="testimonial-nav">
-            <button class="prev">&lt;</button>
-            <button class="next">&gt;</button>
+            <button class="prev" aria-label="Previous testimonial">&lt;</button>
+            <button class="next" aria-label="Next testimonial">&gt;</button>
         </div>
     </section>    
 
-<!-- Footer -->
-<footer>
-    <p>&copy; 2024 Top Tools Ranking. All Rights Reserved.</p>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Top Tools Ranking. All Rights Reserved.</p>
+    </footer>
+</main>
 
 </body>
 </html>
