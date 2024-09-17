@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LLMshowcase - Your Guide to Language Models</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header -->
@@ -14,24 +15,40 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Top Rated LLMs</a></li>
-                <li><a href="#">Latest Reviews</a></li>
-                <li><a href="#">LLM of the Day</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#top-rated-llms">Top Rated LLMs</a></li>
+                <li><a href="#latest-reviews">Latest Reviews</a></li>
+                <li><a href="#llm-of-the-day">LLM of the Day</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main id="home">
+        <!-- Hero Section -->
         <section class="hero">
             <h1>Discover the Best Language Models</h1>
             <p>Explore detailed reviews, ratings, and comparisons of the top Language Models.</p>
         </section>
 
-        <section class="featured-llms">
-            <h2>Top Language Models</h2>
+        <!-- LLM of the Day -->
+        <section id="llm-of-the-day" class="llm-of-the-day">
+            <h2>LLM of the Day</h2>
+            <div class="llm-day-container">
+                <img src="assets/images/llm-featured.jpg" alt="Featured LLM">
+                <div class="llm-day-details">
+                    <h3>Featured LLM: GPT-4</h3>
+                    <p>Rating: ★★★★★</p>
+                    <p>A highly advanced language model that has set the benchmark for others to follow. Excellent for natural language understanding and generation.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Rated LLMs -->
+        <section id="top-rated-llms" class="featured-llms">
+            <h2>Top Rated Language Models</h2>
             <div class="llm-grid">
                 <article class="llm-item">
                     <img src="assets/images/llm1.jpg" alt="LLM 1">
@@ -45,14 +62,61 @@
                     <p>Rating: ★★★★★</p>
                     <a href="#">Read Review</a>
                 </article>
-                <!-- More LLMs can be added in a similar structure -->
+                <article class="llm-item">
+                    <img src="assets/images/llm3.jpg" alt="LLM 3">
+                    <h3>LLM Model 3</h3>
+                    <p>Rating: ★★★★☆</p>
+                    <a href="#">Read Review</a>
+                </article>
+                <!-- More LLMs can be added similarly -->
             </div>
+        </section>
+
+        <!-- Latest Reviews -->
+        <section id="latest-reviews" class="latest-reviews">
+            <h2>Latest Reviews</h2>
+            <div class="reviews-grid">
+                <article class="review-item">
+                    <h3>GPT-4 Review</h3>
+                    <p>GPT-4 sets the gold standard for NLP, offering unparalleled capabilities in language understanding.</p>
+                    <a href="#">Read Full Review</a>
+                </article>
+                <article class="review-item">
+                    <h3>LLM Model 2 Review</h3>
+                    <p>A great balance between performance and usability, ideal for a wide range of applications.</p>
+                    <a href="#">Read Full Review</a>
+                </article>
+                <!-- Add more reviews here -->
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="contact-us">
+            <h2>Contact Us</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 LLMshowcase. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
 
     <script src="JS/main.js"></script>

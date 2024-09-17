@@ -6,12 +6,17 @@
     font-family: Arial, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
 }
 
+/* Navbar & Header */
 header {
     background-color: #333;
     color: white;
@@ -19,6 +24,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 header .logo img {
@@ -30,6 +39,7 @@ nav ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
+    padding-right: 20px;
 }
 
 nav ul li {
@@ -42,13 +52,42 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Hero Section */
 .hero {
-    background-color: #4CAF50;
+    background-color: #ff5722;
     color: white;
-    padding: 50px 20px;
+    padding: 100px 20px;
     text-align: center;
+    margin-top: 70px;
 }
 
+/* LLM of the Day */
+.llm-of-the-day {
+    background-color: #ffeb3b;
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+.llm-day-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.llm-day-container img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.llm-day-details {
+    flex-grow: 1;
+}
+
+.llm-day-details h3 {
+    font-size: 1.5em;
+}
+
+/* Featured LLMs */
 .featured-llms {
     padding: 20px;
     background-color: white;
@@ -70,17 +109,110 @@ nav ul li a {
     padding: 15px;
     border: 1px solid #ddd;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-.llm-item img {
-    max-width: 100%;
-    height: auto;
+.llm-item:hover {
+    transform: translateY(-10px);
 }
 
+/* Latest Reviews */
+.latest-reviews {
+    background-color: #8bc34a;
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+.latest-reviews h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.review-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.review-item:hover {
+    transform: translateY(-10px);
+}
+
+.review-item a {
+    color: #ff5722;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Contact Us Section */
+.contact-us {
+    background-color: #2196f3;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-us h2 {
+    margin-bottom: 20px;
+}
+
+.contact-us form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-us input,
+.contact-us textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-us button {
+    padding: 15px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-us button:hover {
+    background-color: #e64a19;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer .social-media a:hover {
+    color: #ff5722;
 }
