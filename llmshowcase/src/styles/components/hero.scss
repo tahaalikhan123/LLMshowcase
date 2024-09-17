@@ -1,0 +1,26 @@
+.hero {
+    background-color: $light-color;
+    padding: $padding-large;
+    text-align: center;
+  
+    h1 {
+      color: $primary-color;
+      font-size: 48px;
+    }
+  
+    p {
+      font-size: 20px;
+      color: $text-color;
+    }
+  
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+      
+      p {
+        font-size: 18px;
+      }
+    }
+  }  

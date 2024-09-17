@@ -1,0 +1,31 @@
+.llm-grid {
+    padding: 40px 20px;
+    background-color: white;
+  }
+  
+  .llm-grid h2 {
+    text-align: center;
+    color: #ff5722;
+    margin-bottom: 20px;
+  }
+  
+  .llm-grid .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .llm-grid .grid-item {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  .llm-grid .grid-item:hover {
+    background-color: #ff5722;
+    cursor: pointer;
+  }  

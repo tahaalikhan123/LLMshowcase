@@ -1,0 +1,38 @@
+.llm-grid {
+    background-color: $light-color;
+    padding: $padding-large;
+  
+    h2 {
+      color: $primary-color;
+      text-align: center;
+      font-size: 32px;
+    }
+  
+    .grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+  
+      .grid-item {
+        background-color: $dark-color;
+        color: $light-color;
+        padding: $padding-medium;
+        border-radius: $border-radius;
+        width: 30%;
+        text-align: center;
+  
+        &:hover {
+          background-color: $primary-color;
+          cursor: pointer;
+        }
+      }
+  
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .grid-item {
+          width: 100%;
+        }
+      }
+    }
+  }  
