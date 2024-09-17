@@ -3,75 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restructured Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <!-- Add Font Awesome if using its icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>LLMshowcase - Your Guide to Language Models</title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-
-<!-- Hamburger Menu for Mobile -->
-<div class="hamburger" aria-label="Toggle sidebar">
-    <i class="fas fa-bars"></i>
-</div>
-
-<!-- Sidebar Navigation -->
-<div class="sidebar">
-    <a href="index.html">Home</a>
-    <a href="tools.html">Tools</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="register.html">Register</a>
-    <a href="login.html">Login</a>
-    <a href="contact.html">Contact</a>
-</div>
-
-<!-- Main Content -->
-<main>
-    <!-- Quote of the Day Section -->
-    <section class="quote-container">
-        <h2>Quote of the Day</h2>
-        <p id="quote">"The only way to do great work is to love what you do." - Steve Jobs</p>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="about-container">
-        <h2>About Us</h2>
-        <p>We are a team motivated by innovation, aiming to provide the best tools and resources for creators, developers, and learners. Our mission is to help others unlock their potential through technology.</p>
-        <p><strong>Vision:</strong> To inspire creativity.</p>
-        <p><strong>Mission:</strong> To make tools easily accessible to everyone.</p>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonial-slider">
-        <div class="testimonial-slide">
-            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Testimonial from Person 1">
-            <p>"This is the first testimonial."</p>
-            <h4>Person 1</h4>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="LLMshowcase Logo">
         </div>
-        <div class="testimonial-slide">
-            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Testimonial from Person 2">
-            <p>"This is the second testimonial."</p>
-            <h4>Person 2</h4>
-        </div>
-        <div class="testimonial-slide">
-            <img src="pexels-moh-adbelghaffar-771742.jpg" alt="Testimonial from Person 3">
-            <p>"This is the third testimonial."</p>
-            <h4>Person 3</h4>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Top Rated LLMs</a></li>
+                <li><a href="#">Latest Reviews</a></li>
+                <li><a href="#">LLM of the Day</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="testimonial-nav">
-            <button class="prev" aria-label="Previous testimonial">&lt;</button>
-            <button class="next" aria-label="Next testimonial">&gt;</button>
-        </div>
-    </section>    
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+            <h1>Discover the Best Language Models</h1>
+            <p>Explore detailed reviews, ratings, and comparisons of the top Language Models.</p>
+        </section>
+
+        <section class="featured-llms">
+            <h2>Top Language Models</h2>
+            <div class="llm-grid">
+                <article class="llm-item">
+                    <img src="assets/images/llm1.jpg" alt="LLM 1">
+                    <h3>LLM Model 1</h3>
+                    <p>Rating: ★★★★☆</p>
+                    <a href="#">Read Review</a>
+                </article>
+                <article class="llm-item">
+                    <img src="assets/images/llm2.jpg" alt="LLM 2">
+                    <h3>LLM Model 2</h3>
+                    <p>Rating: ★★★★★</p>
+                    <a href="#">Read Review</a>
+                </article>
+                <!-- More LLMs can be added in a similar structure -->
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Top Tools Ranking. All Rights Reserved.</p>
+        <p>&copy; 2024 LLMshowcase. All Rights Reserved.</p>
     </footer>
-</main>
 
+    <script src="JS/main.js"></script>
 </body>
 </html>
