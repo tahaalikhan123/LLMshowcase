@@ -1,12 +1,6 @@
 // Placeholder for future JavaScript functionality
 console.log("LLMshowcase script loaded.");
 
-// Example of dynamic LLM rating adjustment (could be expanded later)
-function updateRating(llmId, newRating) {
-    const ratingElement = document.querySelector(`#${llmId} .rating`);
-    ratingElement.textContent = `Rating: ${"★".repeat(newRating)}${"☆".repeat(5 - newRating)}`;
-}
-
 // Smooth Scrolling on navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -20,5 +14,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Dynamic Navbar Toggle for small screens
+const nav = document.querySelector('nav ul');
+const toggleNav = () => nav.classList.toggle('show');
+
+// Update LLM ratings dynamically
+function updateRating(llmId, newRating) {
+    const ratingElement = document.querySelector(`#${llmId} .rating`);
+    ratingElement.textContent = `Rating: ${"★".repeat(newRating)}${"☆".repeat(5 - newRating)}`;
+}
 
 // Future dynamic features like sorting, filtering, and LLM ranking can be added here.

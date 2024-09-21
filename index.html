@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover detailed reviews and comparisons of the top Language Models.">
+    <meta name="keywords" content="Language Models, LLM, GPT, AI Models, Reviews">
     <title>LLMshowcase - Your Guide to Language Models</title>
     <link rel="stylesheet" href="CSS/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -11,9 +13,9 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="assets/images/logo.png" alt="LLMshowcase Logo">
+            <img src="assets/images/logo.png" alt="LLMshowcase Logo" loading="lazy">
         </div>
-        <nav>
+        <nav aria-label="Main Navigation">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#top-rated-llms">Top Rated LLMs</a></li>
@@ -36,7 +38,7 @@
         <section id="llm-of-the-day" class="llm-of-the-day">
             <h2>LLM of the Day</h2>
             <div class="llm-day-container">
-                <img src="assets/images/llm-featured.jpg" alt="Featured LLM">
+                <img src="assets/images/llm-featured.jpg" alt="Featured LLM" loading="lazy">
                 <div class="llm-day-details">
                     <h3>Featured LLM: GPT-4</h3>
                     <p>Rating: ★★★★★</p>
@@ -51,24 +53,23 @@
             <h2>Top Rated Language Models</h2>
             <div class="llm-grid">
                 <article class="llm-item">
-                    <img src="assets/images/llm1.jpg" alt="LLM 1">
+                    <img src="assets/images/llm1.jpg" alt="LLM 1" loading="lazy">
                     <h3>LLM Model 1</h3>
                     <p>Rating: ★★★★☆</p>
                     <a href="#">Read Review</a>
                 </article>
                 <article class="llm-item">
-                    <img src="assets/images/llm2.jpg" alt="LLM 2">
+                    <img src="assets/images/llm2.jpg" alt="LLM 2" loading="lazy">
                     <h3>LLM Model 2</h3>
                     <p>Rating: ★★★★★</p>
                     <a href="#">Read Review</a>
                 </article>
                 <article class="llm-item">
-                    <img src="assets/images/llm3.jpg" alt="LLM 3">
+                    <img src="assets/images/llm3.jpg" alt="LLM 3" loading="lazy">
                     <h3>LLM Model 3</h3>
                     <p>Rating: ★★★★☆</p>
                     <a href="#">Read Review</a>
                 </article>
-                <!-- More LLMs can be added similarly -->
             </div>
         </section>
 
@@ -86,7 +87,6 @@
                     <p>A great balance between performance and usability, ideal for a wide range of applications.</p>
                     <a href="#">Read Full Review</a>
                 </article>
-                <!-- Add more reviews here -->
             </div>
         </section>
 
@@ -95,13 +95,13 @@
             <h2>Contact Us</h2>
             <form action="#" method="POST">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required aria-label="Enter your name">
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required aria-label="Enter your email address">
 
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" required aria-label="Enter your message"></textarea>
 
                 <button type="submit">Send Message</button>
             </form>
@@ -111,11 +111,11 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 LLMshowcase. All Rights Reserved.</p>
-        <div class="social-media">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="social-media" aria-label="Social Media Links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
 
