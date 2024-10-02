@@ -1,37 +1,33 @@
-/* General Styles */
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin-top: 70px; /* Ensure no content goes under the fixed header */
+    color: #333;
+    background-color: #f4f4f4;
+    margin-top: 70px; /* Account for fixed header */
 }
 
-/* Navbar & Header */
+/* Header and Navigation */
 header {
     background-color: #333;
     color: white;
     padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .logo img {
+.logo img {
     max-width: 150px;
     padding-left: 20px;
 }
@@ -39,7 +35,6 @@ header .logo img {
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: flex-end;
     padding-right: 20px;
 }
 
@@ -51,9 +46,14 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-/* Responsive Navbar */
+nav ul li a:hover {
+    color: #ff5722;
+}
+
+/* Responsive Navigation */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -73,17 +73,12 @@ nav ul li a {
     }
 }
 
-nav ul li a:hover {
-    color: #ff5722;
-}
-
 /* Hero Section */
 .hero {
     background-color: #ff5722;
     color: white;
     padding: 100px 20px;
     text-align: center;
-    margin-top: 70px;
     transition: background-color 0.3s;
 }
 
@@ -91,7 +86,7 @@ nav ul li a:hover {
     background-color: #e64a19;
 }
 
-/* LLM of the Day */
+/* LLM of the Day Section */
 .llm-of-the-day {
     background-color: #ffeb3b;
     padding: 40px 20px;
@@ -109,23 +104,10 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 
-.llm-day-details {
-    flex-grow: 1;
-}
-
-.llm-day-details h3 {
-    font-size: 1.5em;
-}
-
-/* Featured LLMs */
+/* Featured LLMs Section */
 .featured-llms {
     padding: 20px;
     background-color: white;
-}
-
-.featured-llms h2 {
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .llm-grid {
@@ -146,17 +128,11 @@ nav ul li a:hover {
     transform: translateY(-10px);
 }
 
-/* Latest Reviews */
+/* Latest Reviews Section */
 .latest-reviews {
     background-color: #8bc34a;
     padding: 40px 20px;
     margin-top: 20px;
-}
-
-.latest-reviews h2 {
-    text-align: center;
-    color: white;
-    margin-bottom: 20px;
 }
 
 .reviews-grid {
@@ -177,12 +153,6 @@ nav ul li a:hover {
     transform: translateY(-10px);
 }
 
-.review-item a {
-    color: #ff5722;
-    font-weight: bold;
-    text-decoration: none;
-}
-
 /* Contact Us Section */
 .contact-us {
     background-color: #2196f3;
@@ -190,10 +160,6 @@ nav ul li a:hover {
     padding: 40px 20px;
     text-align: center;
     margin-top: 20px;
-}
-
-.contact-us h2 {
-    margin-bottom: 20px;
 }
 
 .contact-us form {
@@ -217,6 +183,7 @@ nav ul li a:hover {
     color: white;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .contact-us button:hover {
@@ -228,26 +195,134 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px 0; /* Remove extra space */
-    margin-top: 40px; /* Add space before the footer starts */
+    padding: 20px 0;
+    margin-top: 40px;
 }
 
-footer .social-media {
+.social-media {
     margin-top: 10px;
 }
 
-footer .social-media a {
+.social-media a {
     color: white;
     font-size: 24px;
     margin: 0 10px;
     transition: color 0.3s ease;
 }
 
-footer .social-media a:hover {
+.social-media a:hover {
     color: #ff5722;
 }
 
 /* Ensure Font Awesome Icons Load Properly */
-footer .social-media i {
-    font-size: 24px; /* Adjust font size for the icons */
+.social-media i {
+    font-size: 24px;
+}
+
+/* Quick Facts Section */
+.quick-facts {
+    background-color: #4CAF50;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.facts-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.fact-item {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.fact-item i {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+/* LLM Comparison Tool */
+.llm-comparison {
+    background-color: #f0f0f0;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.comparison-tool {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.comparison-tool select, .comparison-tool button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.comparison-result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* LLM News Feed */
+.llm-news {
+    background-color: #3498db;
+    color: white;
+    padding: 40px 20px;
+}
+
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.news-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.news-item a {
+    color: #ffeb3b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+details {
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+details p {
+    margin-top: 10px;
+    padding-left: 20px;
 }

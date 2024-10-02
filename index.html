@@ -7,13 +7,14 @@
     <meta name="keywords" content="Language Models, LLM, GPT, AI Models, Reviews">
     <title>LLMshowcase - Your Guide to Language Models</title>
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Defer loading of Font Awesome to improve initial page load speed -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header with navigation -->
     <header>
         <div class="logo">
-            <img src="assets/images/logo.png" alt="LLMshowcase Logo" loading="lazy">
+            <img src="assets/images/logo.png" alt="LLMshowcase Logo" width="150" height="50">
         </div>
         <nav aria-label="Main Navigation">
             <ul>
@@ -34,11 +35,33 @@
             <p>Explore detailed reviews, ratings, and comparisons of the top Language Models.</p>
         </section>
 
+        <!-- New: Quick Facts Section -->
+        <section id="quick-facts" class="quick-facts">
+            <h2>LLM Quick Facts</h2>
+            <div class="facts-container">
+                <div class="fact-item">
+                    <i class="fas fa-brain"></i>
+                    <h3>1 Trillion</h3>
+                    <p>Parameters in the largest LLM</p>
+                </div>
+                <div class="fact-item">
+                    <i class="fas fa-language"></i>
+                    <h3>100+</h3>
+                    <p>Languages supported</p>
+                </div>
+                <div class="fact-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>0.1 seconds</h3>
+                    <p>Average response time</p>
+                </div>
+            </div>
+        </section>
+
         <!-- LLM of the Day -->
         <section id="llm-of-the-day" class="llm-of-the-day">
             <h2>LLM of the Day</h2>
             <div class="llm-day-container">
-                <img src="assets/images/llm-featured.jpg" alt="Featured LLM" loading="lazy">
+                <img src="assets/images/llm-featured.jpg" alt="Featured LLM" width="200" height="150">
                 <div class="llm-day-details">
                     <h3>Featured LLM: GPT-4</h3>
                     <p>Rating: ★★★★★</p>
@@ -46,6 +69,28 @@
                     <a href="#">Learn More</a>
                 </div>
             </div>
+        </section>
+
+        <!-- New: LLM Comparison Tool -->
+        <section id="llm-comparison" class="llm-comparison">
+            <h2>LLM Comparison Tool</h2>
+            <p>Compare different Language Models side by side!</p>
+            <div class="comparison-tool">
+                <select id="llm-select-1">
+                    <option value="">Select LLM 1</option>
+                    <option value="gpt3">GPT-3</option>
+                    <option value="gpt4">GPT-4</option>
+                    <option value="bert">BERT</option>
+                </select>
+                <select id="llm-select-2">
+                    <option value="">Select LLM 2</option>
+                    <option value="gpt3">GPT-3</option>
+                    <option value="gpt4">GPT-4</option>
+                    <option value="bert">BERT</option>
+                </select>
+                <button id="compare-btn">Compare</button>
+            </div>
+            <div id="comparison-result" class="comparison-result"></div>
         </section>
 
         <!-- Top Rated LLMs -->
@@ -73,6 +118,23 @@
             </div>
         </section>
 
+        <!-- New: LLM News Feed -->
+        <section id="llm-news" class="llm-news">
+            <h2>Latest LLM News</h2>
+            <div class="news-container">
+                <article class="news-item">
+                    <h3>GPT-5 Rumors Circulate</h3>
+                    <p>Speculation about the next generation of GPT is heating up the AI community.</p>
+                    <a href="#">Read More</a>
+                </article>
+                <article class="news-item">
+                    <h3>New Benchmark for LLM Evaluation</h3>
+                    <p>Researchers propose a comprehensive framework for assessing LLM capabilities.</p>
+                    <a href="#">Read More</a>
+                </article>
+            </div>
+        </section>
+
         <!-- Latest Reviews -->
         <section id="latest-reviews" class="latest-reviews">
             <h2>Latest Reviews</h2>
@@ -87,6 +149,25 @@
                     <p>A great balance between performance and usability, ideal for a wide range of applications.</p>
                     <a href="#">Read Full Review</a>
                 </article>
+            </div>
+        </section>
+
+        <!-- New: FAQ Section -->
+        <section id="faq" class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <details>
+                    <summary>What is a Language Model?</summary>
+                    <p>A Language Model is an AI system trained on vast amounts of text data to understand and generate human-like text.</p>
+                </details>
+                <details>
+                    <summary>How do LLMs work?</summary>
+                    <p>LLMs use deep learning techniques, typically based on transformer architectures, to process and generate text based on patterns learned from training data.</p>
+                </details>
+                <details>
+                    <summary>Are LLMs safe to use?</summary>
+                    <p>While LLMs are generally safe, they should be used responsibly. They can sometimes produce biased or incorrect information, so human oversight is important.</p>
+                </details>
             </div>
         </section>
 
