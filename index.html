@@ -3,200 +3,486 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover detailed reviews and comparisons of the top Language Models.">
-    <meta name="keywords" content="Language Models, LLM, GPT, AI Models, Reviews">
+    <meta name="description" content="Comprehensive reviews and comparisons of the latest Language Models">
+    <meta name="keywords" content="Language Models, LLM, GPT, AI Models, Reviews, ChatGPT, Claude, Llama">
     <title>LLMshowcase - Your Guide to Language Models</title>
     <link rel="stylesheet" href="CSS/style.css">
-    <!-- Defer loading of Font Awesome to improve initial page load speed -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
-    <!-- Header with navigation -->
     <header>
         <div class="logo">
-            <img src="assets/images/logo.png" alt="LLMshowcase Logo" width="150" height="50">
+            <h1>LLMshowcase</h1>
         </div>
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#top-rated-llms">Top Rated LLMs</a></li>
-                <li><a href="#latest-reviews">Latest Reviews</a></li>
-                <li><a href="#llm-of-the-day">LLM of the Day</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
+        <div class="header-right">
+            <button id="dark-mode-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#top-rated-llms">Top Rated LLMs</a></li>
+                    <li><a href="#latest-reviews">Latest Reviews</a></li>
+                    <li><a href="#comparison">Compare</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Main Content -->
     <main id="home">
-        <!-- Hero Section -->
         <section class="hero">
-            <h1>Discover the Best Language Models</h1>
-            <p>Explore detailed reviews, ratings, and comparisons of the top Language Models.</p>
+            <h2>Discover the Best Language Models</h2>
+            <p>Expert reviews, detailed comparisons, and real-world performance metrics of leading AI language models.</p>
+            <div class="hero-cta">
+                <a href="#top-rated-llms" class="btn-primary">Explore Models</a>
+                <a href="#comparison" class="btn-secondary">Compare LLMs</a>
+            </div>
         </section>
 
-        <!-- New: Quick Facts Section -->
         <section id="quick-facts" class="quick-facts">
-            <h2>LLM Quick Facts</h2>
+            <h2>LLM Landscape 2024</h2>
             <div class="facts-container">
                 <div class="fact-item">
-                    <i class="fas fa-brain"></i>
-                    <h3>1 Trillion</h3>
-                    <p>Parameters in the largest LLM</p>
+                    <div class="fact-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>175B - 1.5T</h3>
+                    <p>Parameter Range</p>
+                    <span class="fact-detail">From smaller open-source models to industry giants</span>
                 </div>
                 <div class="fact-item">
-                    <i class="fas fa-language"></i>
+                    <div class="fact-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
                     <h3>100+</h3>
-                    <p>Languages supported</p>
+                    <p>Languages Supported</p>
+                    <span class="fact-detail">Multilingual capabilities across major LLMs</span>
                 </div>
                 <div class="fact-item">
-                    <i class="fas fa-clock"></i>
-                    <h3>0.1 seconds</h3>
-                    <p>Average response time</p>
+                    <div class="fact-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>1000+</h3>
+                    <p>Tokens per Second</p>
+                    <span class="fact-detail">Average inference speed on modern hardware</span>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>95%+</h3>
+                    <p>Human Evaluation</p>
+                    <span class="fact-detail">Performance on standard benchmarks</span>
                 </div>
             </div>
         </section>
 
-        <!-- LLM of the Day -->
-        <section id="llm-of-the-day" class="llm-of-the-day">
-            <h2>LLM of the Day</h2>
-            <div class="llm-day-container">
-                <img src="assets/images/llm-featured.jpg" alt="Featured LLM" width="200" height="150">
-                <div class="llm-day-details">
-                    <h3>Featured LLM: GPT-4</h3>
-                    <p>Rating: ★★★★★</p>
-                    <p>A highly advanced language model that has set the benchmark for others to follow. Excellent for natural language understanding and generation.</p>
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- New: LLM Comparison Tool -->
-        <section id="llm-comparison" class="llm-comparison">
-            <h2>LLM Comparison Tool</h2>
-            <p>Compare different Language Models side by side!</p>
-            <div class="comparison-tool">
-                <select id="llm-select-1">
-                    <option value="">Select LLM 1</option>
-                    <option value="gpt3">GPT-3</option>
-                    <option value="gpt4">GPT-4</option>
-                    <option value="bert">BERT</option>
-                </select>
-                <select id="llm-select-2">
-                    <option value="">Select LLM 2</option>
-                    <option value="gpt3">GPT-3</option>
-                    <option value="gpt4">GPT-4</option>
-                    <option value="bert">BERT</option>
-                </select>
-                <button id="compare-btn">Compare</button>
-            </div>
-            <div id="comparison-result" class="comparison-result"></div>
-        </section>
-
-        <!-- Top Rated LLMs -->
         <section id="top-rated-llms" class="featured-llms">
             <h2>Top Rated Language Models</h2>
+            <p class="section-description">Explore detailed reviews and comparisons of the most advanced AI language models, rated by our expert team.</p>
+            
+            <div class="search-container">
+                <input type="text" id="llm-search" placeholder="Search language models...">
+            </div>
+
+            <div class="llm-filters">
+                <button class="filter-btn active" data-filter="all">All Models</button>
+                <button class="filter-btn" data-filter="proprietary">Proprietary</button>
+                <button class="filter-btn" data-filter="open-source">Open Source</button>
+                <button class="filter-btn" data-filter="specialized">Specialized</button>
+            </div>
+            
             <div class="llm-grid">
-                <article class="llm-item">
-                    <img src="assets/images/llm1.jpg" alt="LLM 1" loading="lazy">
-                    <h3>LLM Model 1</h3>
-                    <p>Rating: ★★★★☆</p>
-                    <a href="#">Read Review</a>
+                <article class="llm-item" id="gpt4" data-category="proprietary">
+                    <div class="llm-header">
+                        <span class="llm-badge">Enterprise</span>
+                        <h3>GPT-4 Turbo</h3>
+                        <p class="rating">★★★★★</p>
+                    </div>
+                    <div class="llm-content">
+                        <div class="llm-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Context</span>
+                                <span class="spec-value">128K tokens</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Updated</span>
+                                <span class="spec-value">Jan 2024</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Access</span>
+                                <span class="spec-value">API</span>
+                            </div>
+                        </div>
+                        <p class="llm-description">Latest multimodal model from OpenAI with enhanced capabilities and longer context window.</p>
+                        <div class="llm-features">
+                            <h4>Key Features</h4>
+                            <ul class="features">
+                                <li>Advanced reasoning capabilities</li>
+                                <li>Multimodal input processing</li>
+                                <li>Enhanced code generation</li>
+                                <li>Improved factual accuracy</li>
+                            </ul>
+                        </div>
+                        <div class="llm-benchmarks">
+                            <h4>Benchmark Scores</h4>
+                            <div class="benchmark-grid">
+                                <div class="benchmark-item">
+                                    <span class="benchmark-label">MMLU</span>
+                                    <span class="benchmark-score">86.4%</span>
+                                </div>
+                                <div class="benchmark-item">
+                                    <span class="benchmark-label">HumanEval</span>
+                                    <span class="benchmark-score">88.2%</span>
+                                </div>
+                                <div class="benchmark-item">
+                                    <span class="benchmark-label">GSM8K</span>
+                                    <span class="benchmark-score">92.0%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="llm-actions">
+                            <a href="#" class="btn">Read Review</a>
+                            <button class="btn-outline">Compare</button>
+                        </div>
+                    </div>
                 </article>
-                <article class="llm-item">
-                    <img src="assets/images/llm2.jpg" alt="LLM 2" loading="lazy">
-                    <h3>LLM Model 2</h3>
-                    <p>Rating: ★★★★★</p>
-                    <a href="#">Read Review</a>
+
+                <article class="llm-item" id="claude2" data-category="proprietary">
+                    <div class="llm-header">
+                        <span class="llm-badge">Enterprise</span>
+                        <h3>Claude 2.1</h3>
+                        <p class="rating">★★★★★</p>
+                    </div>
+                    <div class="llm-content">
+                        <div class="llm-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Context</span>
+                                <span class="spec-value">200K tokens</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Updated</span>
+                                <span class="spec-value">Dec 2023</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Access</span>
+                                <span class="spec-value">API</span>
+                            </div>
+                        </div>
+                        <p class="llm-description">Anthropic's latest model with improved accuracy and extended context handling capabilities.</p>
+                        <div class="llm-features">
+                            <h4>Key Features</h4>
+                            <ul class="features">
+                                <li>200K token context window</li>
+                                <li>Constitutional AI principles</li>
+                                <li>Advanced analysis capabilities</li>
+                                <li>Improved safety measures</li>
+                            </ul>
+                        </div>
+                        <div class="llm-benchmarks">
+                            <h4>Benchmark Scores</h4>
+                            <div class="benchmark-grid">
+                                <div class="benchmark-item">
+                                    <span class="benchmark-label">MMLU</span>
+                                    <span class="benchmark-score">85.5%</span>
+                                </div>
+                                <div class="benchmark-item">
+                                    <span class="benchmark-label">HumanEval</span>
+                                    <span class="benchmark-score">89.3%</span>
+                                </div>
+                                <div class="benchmark-item">
+                                    <span class="benchmark-label">GSM8K</span>
+                                    <span class="benchmark-score">88.4%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="llm-actions">
+                            <a href="#" class="btn">Read Review</a>
+                            <button class="btn-outline">Compare</button>
+                        </div>
+                    </div>
                 </article>
-                <article class="llm-item">
-                    <img src="assets/images/llm3.jpg" alt="LLM 3" loading="lazy">
-                    <h3>LLM Model 3</h3>
-                    <p>Rating: ★★★★☆</p>
-                    <a href="#">Read Review</a>
+
+                <article class="llm-item" id="llama2" data-category="open-source">
+                    <div class="llm-header">
+                        <span class="llm-badge">Open Source</span>
+                        <h3>Llama 2 70B</h3>
+                        <p class="rating">★★★★☆</p>
+                    </div>
+                    <div class="llm-content">
+                        <div class="llm-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Context</span>
+                                <span class="spec-value">4K tokens</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Updated</span>
+                                <span class="spec-value">Jul 2023</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Access</span>
+                                <span class="spec-value">Download</span>
+                            </div>
+                        </div>
+                        <p class="llm-description">Meta's powerful open-source model with strong performance and flexible deployment options.</p>
+                        <div class="llm-features">
+                            <h4>Key Features</h4>
+                            <ul class="features">
+                                <li>Commercial use allowed</li>
+                                <li>Self-hosting capability</li>
+                                <li>Fine-tuning support</li>
+                                <li>Community ecosystem</li>
+                            </ul>
+                        </div>
+                        <div class="llm-benchmarks">
+                            <h4>Benchmark Scores</h4>
+                            <div class="benchmark-grid">
+                                <div class="benchmark-item">
+                                    <span class="benchmark-label">MMLU</span>
+                                    <span class="benchmark-score">69.8%</span>
+                                </div>
+                                <div class="benchmark-item">
+                                    <span class="benchmark-label">HumanEval</span>
+                                    <span class="benchmark-score">55.4%</span>
+                                </div>
+                                <div class="benchmark-item">
+                                    <span class="benchmark-label">GSM8K</span>
+                                    <span class="benchmark-score">63.7%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="llm-actions">
+                            <a href="#" class="btn">Read Review</a>
+                            <button class="btn-outline">Compare</button>
+                        </div>
+                    </div>
                 </article>
+            </div>
+
+            <div class="load-more">
+                <button class="btn-primary">Load More Models</button>
             </div>
         </section>
 
-        <!-- New: LLM News Feed -->
-        <section id="llm-news" class="llm-news">
-            <h2>Latest LLM News</h2>
-            <div class="news-container">
-                <article class="news-item">
-                    <h3>GPT-5 Rumors Circulate</h3>
-                    <p>Speculation about the next generation of GPT is heating up the AI community.</p>
-                    <a href="#">Read More</a>
-                </article>
-                <article class="news-item">
-                    <h3>New Benchmark for LLM Evaluation</h3>
-                    <p>Researchers propose a comprehensive framework for assessing LLM capabilities.</p>
-                    <a href="#">Read More</a>
-                </article>
+        <section id="comparison" class="comparison-section">
+            <h2>Compare Language Models</h2>
+            <p class="section-description">Make informed decisions by comparing the capabilities, features, and performance metrics of different language models side by side.</p>
+            
+            <div class="comparison-container">
+                <div class="comparison-tool">
+                    <div class="select-wrapper">
+                        <select id="llm-select-1">
+                            <option value="">Select First Model</option>
+                            <option value="gpt4">GPT-4 Turbo</option>
+                            <option value="claude2">Claude 2.1</option>
+                            <option value="llama2">Llama 2</option>
+                            <option value="palm2">PaLM 2</option>
+                            <option value="mistral">Mistral 7B</option>
+                            <option value="gemini">Gemini Pro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="comparison-vs">VS</div>
+                    
+                    <div class="select-wrapper">
+                        <select id="llm-select-2">
+                            <option value="">Select Second Model</option>
+                            <option value="gpt4">GPT-4 Turbo</option>
+                            <option value="claude2">Claude 2.1</option>
+                            <option value="llama2">Llama 2</option>
+                            <option value="palm2">PaLM 2</option>
+                            <option value="mistral">Mistral 7B</option>
+                            <option value="gemini">Gemini Pro</option>
+                        </select>
+                    </div>
+                    
+                    <button id="compare-btn" class="btn-primary">Compare Models</button>
+                </div>
+
+                <div id="comparison-result" class="comparison-result">
+                    <div class="comparison-placeholder">
+                        <i class="fas fa-chart-bar"></i>
+                        <p>Select two models above to see a detailed comparison</p>
+                    </div>
+                </div>
+
+                <div id="compare-history" class="compare-history">
+                    <h3>Recent Comparisons</h3>
+                    <div class="history-items"></div>
+                </div>
             </div>
         </section>
 
-        <!-- Latest Reviews -->
         <section id="latest-reviews" class="latest-reviews">
-            <h2>Latest Reviews</h2>
+            <h2>Latest Model Reviews</h2>
+            <p class="section-description">In-depth analysis and performance evaluations of the newest language model releases and updates.</p>
+            
             <div class="reviews-grid">
                 <article class="review-item">
-                    <h3>GPT-4 Review</h3>
-                    <p>GPT-4 sets the gold standard for NLP, offering unparalleled capabilities in language understanding.</p>
-                    <a href="#">Read Full Review</a>
+                    <div class="review-header">
+                        <span class="review-tag">New Release</span>
+                        <h3>GPT-4 Turbo Review</h3>
+                        <p class="date">Updated: January 2024</p>
+                    </div>
+                    <div class="review-content">
+                        <div class="key-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Context Window</span>
+                                <span class="metric-value">128K tokens</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Response Time</span>
+                                <span class="metric-value">0.8s avg</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Cost</span>
+                                <span class="metric-value">$0.01/1K tokens</span>
+                            </div>
+                        </div>
+                        <p>Comprehensive analysis of GPT-4's latest capabilities, including enhanced reasoning, improved instruction following, and advanced code generation.</p>
+                        <div class="review-highlights">
+                            <h4>Key Findings</h4>
+                            <ul>
+                                <li>32% improvement in reasoning tasks</li>
+                                <li>Better handling of complex instructions</li>
+                                <li>Reduced hallucination rate</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn">Read Full Review</a>
+                    </div>
                 </article>
+
                 <article class="review-item">
-                    <h3>LLM Model 2 Review</h3>
-                    <p>A great balance between performance and usability, ideal for a wide range of applications.</p>
-                    <a href="#">Read Full Review</a>
+                    <div class="review-header">
+                        <span class="review-tag">Updated</span>
+                        <h3>Claude 2.1 Analysis</h3>
+                        <p class="date">Updated: January 2024</p>
+                    </div>
+                    <div class="review-content">
+                        <div class="key-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Context Window</span>
+                                <span class="metric-value">200K tokens</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Response Time</span>
+                                <span class="metric-value">1.2s avg</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Cost</span>
+                                <span class="metric-value">$0.008/1K tokens</span>
+                            </div>
+                        </div>
+                        <p>Deep dive into Claude 2.1's improvements in accuracy, safety features, and extended context handling capabilities.</p>
+                        <div class="review-highlights">
+                            <h4>Key Findings</h4>
+                            <ul>
+                                <li>200K token context window</li>
+                                <li>Enhanced factual accuracy</li>
+                                <li>Improved code analysis</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn">Read Full Review</a>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <!-- New: FAQ Section -->
-        <section id="faq" class="faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <details>
-                    <summary>What is a Language Model?</summary>
-                    <p>A Language Model is an AI system trained on vast amounts of text data to understand and generate human-like text.</p>
-                </details>
-                <details>
-                    <summary>How do LLMs work?</summary>
-                    <p>LLMs use deep learning techniques, typically based on transformer architectures, to process and generate text based on patterns learned from training data.</p>
-                </details>
-                <details>
-                    <summary>Are LLMs safe to use?</summary>
-                    <p>While LLMs are generally safe, they should be used responsibly. They can sometimes produce biased or incorrect information, so human oversight is important.</p>
-                </details>
+        <section id="contact" class="contact-section">
+            <h2>Get in Touch</h2>
+            <p class="section-description">Have questions about language models? We're here to help!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <a href="mailto:hello@llmshowcase.com" class="contact-link">
+                            hello@llmshowcase.com
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Discord Community</h3>
+                        <a href="#" class="contact-link">
+                            Join our Discord
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <a href="#" class="contact-link">
+                            Contribute on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                </div>
             </div>
-        </section>
-
-        <!-- Contact Us Section -->
-        <section id="contact" class="contact-us">
-            <h2>Contact Us</h2>
-            <form action="#" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required aria-label="Enter your name">
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required aria-label="Enter your email address">
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required aria-label="Enter your message"></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 LLMshowcase. All Rights Reserved.</p>
-        <div class="social-media" aria-label="Social Media Links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#top-rated-llms">Top Rated LLMs</a></li>
+                        <li><a href="#latest-reviews">Latest Reviews</a></li>
+                        <li><a href="#comparison">Compare Models</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#">Discord Server</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Contributing</a></li>
+                        <li><a href="#">Code of Conduct</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LLMshowcase. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
