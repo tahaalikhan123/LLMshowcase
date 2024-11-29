@@ -1,4 +1,3 @@
-// Wait for the DOM to be fully loaded before executing scripts
 document.addEventListener('DOMContentLoaded', function() {
     console.log("LLMshowcase script loaded.");
 
@@ -83,41 +82,118 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Dark Mode Toggle
-    const darkModeToggle = document.createElement('button');
-    darkModeToggle.id = 'dark-mode-toggle';
-    darkModeToggle.innerHTML = '🌙';
-    darkModeToggle.classList.add('dark-mode-toggle');
-    document.body.appendChild(darkModeToggle);
+    // Mobile Menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('nav');
 
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        darkModeToggle.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-    });
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mainNav.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
 
-    // Check for saved dark mode preference
-    if (localStorage.getItem('darkMode') === 'true') {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '☀️';
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
+        });
+
+        // Close menu when clicking a link
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
     }
 
-    // Search and Filter Functionality
-    const searchInput = document.createElement('input');
-    searchInput.type = 'text';
-    searchInput.id = 'llm-search';
-    searchInput.placeholder = 'Search LLMs...';
-    document.querySelector('.featured-llms').insertBefore(searchInput, document.querySelector('.llm-grid'));
-
-    searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const llmItems = document.querySelectorAll('.llm-item');
+    // Initialize Dark Mode
+    function initializeDarkMode() {
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
         
-        llmItems.forEach(item => {
-            const llmName = item.querySelector('h3').textContent.toLowerCase();
-            item.style.display = llmName.includes(searchTerm) ? 'block' : 'none';
+        if (!darkModeToggle) return;
+
+        // Check for saved dark mode preference
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            const icon = darkModeToggle.querySelector('i');
+            if (icon) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        }
+
+        // Toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const icon = darkModeToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+            }
+            localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+        });
+    }
+
+    // Initialize dark mode functionality
+    initializeDarkMode();
+
+    // Filter functionality for LLM cards
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const llmItems = document.querySelectorAll('.llm-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filter items
+            llmItems.forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         });
     });
+
+    // Search functionality
+    const searchInput = document.getElementById('llm-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            llmItems.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                const description = item.querySelector('.llm-description')?.textContent.toLowerCase() || '';
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    }
 
     // Interactive Rating System
     function createInteractiveRating(llmItem) {
